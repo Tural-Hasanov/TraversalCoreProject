@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int trig = 0;
+}
+
+<h1>Istifadəçi Siyahısı</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>İstifadəçi adı</th>
+        <th>Mail</th>
+        <th>Sil</th>
+        <th>Yenilə</th>
+        <th>Şərhlər</th>
+        <th>Tur Keçmişi</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        trig = trig + 1;
+    
+    <tr>
+        <td>@trig</td>
+        <td>@item.Name @item.SurName</td>
+        <td>@item.UserName</td>
+        <td>@item.Email</td>
+        <td><a href="/Admin/User/DeleteUser/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+        <td><a href="/Admin/User/EditUser/@item.Id" class="btn btn-success">Yenilə</a></td>
+        <td><a href="/Admin/User/CommentUser/@item.Id" class="btn btn-outline-info">Şərhlər</a></td>
+        <td><a href="/Admin/User/ReservationUser/@item.Id" class="btn btn-outline-primary">Tur Keçmişi</a></td>
+    </tr>
+    }
+</table>
+
+<a href="/Login/SignUp/" class="btn btn-outline-primary">Yeni İstifadəçi Yarat</a>

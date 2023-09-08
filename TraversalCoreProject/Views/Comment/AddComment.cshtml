@@ -1,0 +1,21 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div class="leave-comment-form mt-5" id="reply">
+        <h4 class="side-title mb-2">Şərh yazın</h4>
+        <p class="mb-4">
+            İşarələnmiş xanaları doldurun *
+        </p>
+        <form method="post" asp-action="AddComment" asp-controller="Comment">
+            <input type="hidden" name="DestinationID" value="@ViewBag.destID" />
+            <input type="hidden" name="AppUserID" value="@ViewBag.UserID" />
+            <div class="form-group">
+                <textarea name="CommentContent" class="form-control" placeholder="Şərhiniz*" required=""
+                          spellcheck="false"></textarea>
+            </div>
+
+            <div class="submit text-right">
+                <button class="btn btn-style btn-primary">Şərh et </button>
+            </div>
+        </form>
+    </div>
+}

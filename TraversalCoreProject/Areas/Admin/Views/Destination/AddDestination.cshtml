@@ -1,0 +1,55 @@
+﻿@model EntityLayer.Concrete.Destination
+@{
+    ViewData["Title"] = "AddDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Rota</h1>
+<form method="post">
+    <div class="form-group">
+        @Html.Label("Şəhər")
+        <input type="text" asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Gün Gecə")
+        <input type="text" asp-for="DayNight" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Qiymət")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Ana Görüntü")
+        <input type="text" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Tutum")
+        <input type="text" asp-for="Capacity" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Örtük Fon")
+        <input type="text" asp-for="CoverImage" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Görüntü 2")
+        <input type="text" asp-for="Image2" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Detal 1")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Details1"></textarea>
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Detal 2")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Details2"></textarea>
+    </div>
+    <br />
+    <button class="btn btn-outline-primary">Yarat</button>
+</form>

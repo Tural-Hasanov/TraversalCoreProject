@@ -1,0 +1,25 @@
+﻿@model List<DTOLayer.DTOs.AnnouncementDTOs.AnnouncementListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Announcement List</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Bashliq</th>
+        <th>Content</th>
+        <th>Detallar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AnnouncementID</td>
+            <td>@item.Title</td>
+            <td>@item.Content</td>
+            <td><a href="#" class="btn btn-outline-dark">Detallar</a></td>
+        </tr>
+    }
+</table>
